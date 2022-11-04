@@ -1,0 +1,185 @@
+body {
+    background-color: rgba(92,147,177,255);
+    color: white;
+    font-family: 'Raleway', sans-serif;
+    letter-spacing: 0.1em;
+}
+
+.container {
+    display: grid;
+    grid-template-areas:
+     "header header header"
+     "main main main"
+     "footer footer footer"
+    ;
+    grid-template-rows: minmax(10vh, auto) minmax(50vh, auto) minmax(2vh, auto);
+    width: 100%;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+#mainHeader {
+    grid-area: header;
+    z-index: 2;
+  }
+.logoMobile, .menuBurger, .menuBurgerMobile, #toggleButton, #toggleNav {
+    display: none;
+}
+
+.menuBurgerMobile{
+    background-color: darkcyan;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    border-radius: 3px;
+    padding: 3px;
+    text-align: center;
+}
+
+.menuBurgerMobile a{
+    text-shadow: 1px 1px 3px black;
+    margin: 30px auto;
+    font-size: 30px;
+}
+
+.logoOneday {
+    display: flex;
+    justify-content: space-between;
+    padding: 48px;
+    margin-left: auto;
+    width: 80%;
+}
+
+#logo {
+    height: 60px;
+}
+
+.menuNavigation {
+    text-align: center;
+    position: fixed;
+    top: 0;
+    width: 80%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: right;
+    z-index: 99;
+    padding: 10px auto;
+    margin: 10px;
+}
+
+.menuNavigation a {
+    padding: 40px 16px;
+    font-weight: 600;
+}
+
+.menuNavigation i {
+    padding: 41px 16px;
+}
+
+#toggleNav:checked + .menuNavigation {
+    display: none;
+}
+
+.mainText {
+    margin-top: auto;
+}
+
+.bigText {
+    text-align: center;
+    font-weight: 300;
+    font-size: 300%;
+}
+.smallText {
+    text-align: center;
+    width: 28%;
+    margin: 0 auto;
+    font-size: 133%;
+    padding: 5px;
+    line-height: 1.5em;
+}
+
+main {
+    grid-area: main;
+    margin-top: auto;
+}
+
+.button{
+    margin-top: 100px;
+    justify-content: center;
+    text-align: center;
+}
+
+.buttonMore{
+    border: none;
+    border-radius: 400px;
+    padding: 20px 50px;
+    width: fit-content;
+    height: fit-content;
+    color: rgb(107, 107, 107);
+    font-weight: 700;
+}
+
+@media screen and (max-width: 600px) {
+    .menuNavigation {
+        display: none;
+    }
+
+    .logoOneday {
+    display: none;
+    }
+
+    .smallText {
+        width: 90%;
+        font-size: 120%;
+    }
+
+    .menuBurger{
+        display: block;
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        z-index: 3;
+        user-select: none;
+    }
+
+    #toggleButton:checked + .menuBurgerMobile {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .logoMobile {
+        display: block;
+        width: 100%;
+        text-align: center;
+        margin-top: 50px;
+    }
+
+    #logoM{
+        height: 70px;
+    }
+
+    main {
+        margin-top: 100px;
+    }
+
+}
+
+@media screen and (max-width: 900px) {
+    .menuNavigation {
+        width: 100%;
+        text-align: center;
+        justify-content: center;
+    }
+
+    .logoOneday {
+        text-align: center;
+        justify-content: center;
+        margin: 0;
+        margin-top: 130px;
+        width: 100%;
+        padding: 0;
+    }
+}
